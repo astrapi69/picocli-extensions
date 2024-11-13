@@ -19,8 +19,11 @@ silly-collection-version = "28.1"
 silly-io-version = "3.3"
 test-object-version = "9"
 throwable-version = "3"
+picocli-version = "4.7.6"
 
 [libraries]
+picocli = { module = "info.picocli:picocli", version.ref = "picocli-version" }
+picocli-codegen = { module = "info.picocli:picocli-codegen", version.ref = "picocli-version" }
 assertj-core = { module = "org.assertj:assertj-core", version.ref = "assertj-core-version" }
 commons-text = { module = "org.apache.commons:commons-text", version.ref = "commons-text-version" }
 equalsverifier = { module = "nl.jqno.equalsverifier:equalsverifier", version.ref = "equalsverifier-version" }
@@ -42,10 +45,15 @@ throwable = { module = "io.github.astrapi69:throwable", version.ref = "throwable
 # Dependencies for the annotation processor used during the compilation process
 annotation-processor = [
     "lombok",
+    "picocli-codegen",
 ]
 # Dependencies required only at compile-time and not included in the final artifact
 compile-only = [
     "lombok",
+]
+# The core dependencies
+core-dependencies = [
+    "picocli",
 ]
 # Annotation processor dependencies used specifically for test classes
 test-annotation-processor = [

@@ -36,6 +36,7 @@ java {
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = "UTF-8"
+    options.compilerArgs += ["-Aproject=${project.group}/${project.name}"]
     // Uncomment the lines below if you want to enable specific compiler warnings
     // options.compilerArgs << "-Xlint:deprecation"
     // options.compilerArgs << "-Xlint:unchecked"
